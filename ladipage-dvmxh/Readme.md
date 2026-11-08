@@ -48,7 +48,7 @@ sub24h-landing/
 
 ### Cần đổi số tài khoản ngân hàng VietQR
 👉 Mở file **`index.html`**, bấm `Ctrl + F` tìm từ khóa:
-* `0988242424` -> Đổi thành số tài khoản của bạn.
+* `00000` -> Đổi thành số tài khoản của bạn.
 * `MB BANK` -> Đổi tên ngân hàng.
 * `SUB24H CO LTD` -> Đổi tên chủ tài khoản.
 
