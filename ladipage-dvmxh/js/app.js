@@ -45,7 +45,7 @@ function renderServices(filter = 'all') {
                         <i class="${item.icon}"></i>
                     </div>
                     <span class="text-xs font-bold px-3 py-1 rounded-full border ${item.badgeBg}">
-                        Chá» tá»« ${item.priceStarting}
+                        Chỉ từ ${item.priceStarting}
                     </span>
                 </div>
                 <!-- Title & Description -->
@@ -63,7 +63,7 @@ function renderServices(filter = 'all') {
             </div>
             <!-- Action Button -->
             <button class="btn-select-service w-full py-3 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-xs border border-white/10 hover:border-transparent transition-all flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-cyan-500/20" data-platform="${item.platform}">
-                <span>Xem dá»ch vá»¥ & BÃ¡o giÃ¡</span>
+                <span>Xem dịch vụ & Báo giá</span>
                 <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
             </button>
         </div>
@@ -106,7 +106,7 @@ function renderPricingTable() {
             <tr>
                 <td colspan="6" class="text-center py-12 text-slate-400 text-sm">
                     <i class="fa-solid fa-magnifying-glass text-2xl mb-2 block text-slate-600"></i>
-                    KhÃ´ng tÃ¬m tháº¥y dá»ch vá»¥ nÃ o phÃ¹ há»£p vá»i tá»« khÃ³a "${currentPricingSearch}".
+                    Không tìm thấy dịch vụ nào phù hợp với từ khóa "${currentPricingSearch}".
                 </td>
             </tr>
         `;
@@ -143,9 +143,9 @@ function renderPricingTable() {
             </td>
             <td class="py-4 px-4">
                 <div class="font-black text-cyan-400 text-sm sm:text-base font-mono">
-                    ${(item.price).toLocaleString('vi-VN')}Ä
+                    ${(item.price).toLocaleString('vi-VN')}đ
                 </div>
-                <div class="text-[10px] text-slate-400">/ 1.000 tÆ°Æ¡ng tÃ¡c</div>
+                <div class="text-[10px] text-slate-400">/ 1.000 tương tác</div>
             </td>
             <td class="py-4 px-4 text-center">
                 <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full ${item.statusColor}">
@@ -155,7 +155,7 @@ function renderPricingTable() {
             <td class="py-4 px-6 text-right">
                 <button class="btn-table-order px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-xs shadow-md shadow-cyan-500/20 transition-all flex items-center gap-1.5 ml-auto" data-service-id="${item.id}">
                     <i class="fa-solid fa-cart-shopping text-[10px]"></i>
-                    <span>Táº¡o ÄÆ¡n</span>
+                    <span>Tạo đơn</span>
                 </button>
             </td>
         </tr>
@@ -224,8 +224,8 @@ function renderLiveMarquee() {
     marquee.innerHTML = items.map(ord => `
         <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-xs text-slate-300">
             <i class="${ord.icon} text-cyan-400"></i>
-            <span>KhÃ¡ch hÃ ng <strong class="text-white">${ord.user}</strong></span>
-            <span class="text-slate-400">â¢ Vá»«a mua:</span>
+            <span>Khách hàng <strong class="text-white">${ord.user}</strong></span>
+            <span class="text-slate-400">• Vừa mua:</span>
             <span class="font-bold text-cyan-300">${ord.service}</span>
             <span class="text-[10px] text-slate-500 font-mono">(${ord.time})</span>
         </div>
@@ -240,9 +240,9 @@ function updateActivityPopup() {
     const avatarEl = document.getElementById('activity-avatar');
     if (!popup || !userEl) return;
     const item = RECENT_ORDERS_SIMULATION[activityIndex % RECENT_ORDERS_SIMULATION.length];
-    userEl.textContent = `KhÃ¡ch hÃ ng ${item.user}`;
+    userEl.textContent = `Khách hàng ${item.user}`;
     timeEl.textContent = item.time;
-    textEl.textContent = `Vá»«a táº¡o ÄÆ¡n ${item.service}`;
+    textEl.textContent = `Vừa tạo đơn ${item.service}`;
     avatarEl.innerHTML = `<i class="${item.icon}"></i>`;
     activityIndex++;
 }
@@ -254,15 +254,15 @@ function initCostCalculator() {
     const btnOrderNow = document.getElementById('btn-calc-order-now');
     if (!select || !slider) return;
     select.innerHTML = PRICING_DATA.map(p => `
-        <option value="${p.id}" data-price="${p.price}">${p.name} (${(p.price).toLocaleString()}Ä/1K)</option>
+        <option value="${p.id}" data-price="${p.price}">${p.name} (${(p.price).toLocaleString()}đ/1K)</option>
     `).join('');
     function updatePrice() {
         const opt = select.options[select.selectedIndex];
         const unitPrice = parseFloat(opt.getAttribute('data-price') || 0);
         const qty = parseInt(slider.value, 10);
-        qtyDisplay.textContent = `${qty.toLocaleString('vi-VN')} lÆ°á»£t`;
+        qtyDisplay.textContent = `${qty.toLocaleString('vi-VN')} lượt`;
         const total = Math.round((qty / 1000) * unitPrice);
-        priceDisplay.textContent = `${total.toLocaleString('vi-VN')} VNÄ`;
+        priceDisplay.textContent = `${total.toLocaleString('vi-VN')} VNĐ`;
     }
     select.addEventListener('change', updatePrice);
     slider.addEventListener('input', updatePrice);
@@ -286,12 +286,12 @@ function initGrowthChart() {
             interactions: [5000, 9500, 16000, 28000, 42000, 68000, 86400]
         },
         '30d': {
-            labels: ['Tuáº§n 1', 'Tuáº§n 2', 'Tuáº§n 3', 'Tuáº§n 4'],
+            labels: ['Tuần 1', 'Tuần 2', 'Tuần 3', 'Tuần 4'],
             followers: [8500, 22000, 45000, 89000],
             interactions: [40000, 110000, 260000, 480000]
         },
         '90d': {
-            labels: ['ThÃ¡ng 1', 'ThÃ¡ng 2', 'ThÃ¡ng 3'],
+            labels: ['Tháng 1', 'Tháng 2', 'Tháng 3'],
             followers: [28000, 85000, 195000],
             interactions: [180000, 650000, 1420000]
         }
@@ -306,7 +306,7 @@ function initGrowthChart() {
             labels: data.labels,
             datasets: [
                 {
-                    label: 'LÆ°á»£t TÆ°Æ¡ng tÃ¡c (Views & Likes)',
+                    label: 'Lượt Tương tác (Views & Likes)',
                     data: data.interactions,
                     borderColor: '#06B6D4',
                     backgroundColor: 'rgba(6, 182, 212, 0.15)',
@@ -318,7 +318,7 @@ function initGrowthChart() {
                     borderWidth: 2.5
                 },
                 {
-                    label: 'Followers Má»i',
+                    label: 'Followers Mới',
                     data: data.followers,
                     borderColor: '#8B5CF6',
                     backgroundColor: 'rgba(139, 92, 246, 0.1)',
@@ -347,7 +347,7 @@ function initGrowthChart() {
                     usePointStyle: true,
                     callbacks: {
                         label: function(context) {
-                            return ` ${context.dataset.label}: ${context.parsed.y.toLocaleString()} lÆ°á»£t`;
+                            return ` ${context.dataset.label}: ${context.parsed.y.toLocaleString()} lượt`;
                         }
                     }
                 }
@@ -389,7 +389,7 @@ function updateHeaderUserUI() {
             userActions.classList.add('flex');
         }
         if (userName) userName.textContent = currentUser.username || 'user_vip';
-        if (userBalance) userBalance.textContent = (currentUser.balance || 50000).toLocaleString('vi-VN') + 'Ä';
+        if (userBalance) userBalance.textContent = (currentUser.balance || 50000).toLocaleString('vi-VN') + 'đ';
         if (userAvatar) userAvatar.textContent = (currentUser.username || 'U').charAt(0).toUpperCase();
     } else {
         if (guestActions) guestActions.classList.remove('hidden');
@@ -411,21 +411,21 @@ function openAuthModal(isRegister = false) {
     if (isRegister) {
         tabRegister.className = 'flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow';
         tabLogin.className = 'flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white';
-        title.textContent = 'ÄÄng kÃ½ tÃ i khoáº£n má»i';
-        subtitle.textContent = 'Khá»i táº¡o tÃ i khoáº£n SUB24H hoÃ n toÃ n miá»n phÃ­';
+        title.textContent = 'Đăng ký tài khoản mới';
+        subtitle.textContent = 'Khởi tạo tài khoản SUB24H hoàn toàn miễn phí';
         fieldEmail.classList.remove('hidden');
         fieldAgree.classList.remove('hidden');
         fieldAgree.classList.add('flex');
-        btnSubmit.textContent = 'HoÃ n táº¥t ÄÄng kÃ½';
+        btnSubmit.textContent = 'Hoàn tất Đăng ký';
     } else {
         tabLogin.className = 'flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow';
         tabRegister.className = 'flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white';
-        title.textContent = 'ÄÄng nháº­p SUB24H';
-        subtitle.textContent = 'Truy cáº­p báº£ng Äiá»u khiá»n vÃ  quáº£n lÃ½ ÄÆ¡n hÃ ng';
+        title.textContent = 'Đăng nhập SUB24H';
+        subtitle.textContent = 'Truy cập bảng điều khiển và quản lý đơn hàng';
         fieldEmail.classList.add('hidden');
         fieldAgree.classList.add('hidden');
         fieldAgree.classList.remove('flex');
-        btnSubmit.textContent = 'XÃ¡c nháº­n ÄÄng nháº­p';
+        btnSubmit.textContent = 'Xác nhận Đăng nhập';
     }
     modalAuth.classList.remove('hidden');
 }
@@ -449,8 +449,8 @@ function openOrderModal(serviceId = null, prefillQty = 1000) {
         const found = PRICING_DATA.find(p => p.id === curId) || PRICING_DATA[0];
         const qty = parseInt(qtyInput.value || 1000, 10);
         const total = Math.round((qty / 1000) * found.price);
-        unitPriceDisplay.textContent = `${(found.price).toLocaleString('vi-VN')}Ä`;
-        totalDisplay.textContent = `${total.toLocaleString('vi-VN')} VNÄ`;
+        unitPriceDisplay.textContent = `${(found.price).toLocaleString('vi-VN')}đ`;
+        totalDisplay.textContent = `${total.toLocaleString('vi-VN')} VNĐ`;
         warrantyDisplay.textContent = found.warranty;
         speedDisplay.textContent = found.speed;
     }
@@ -473,33 +473,33 @@ function openPolicyModal(type) {
     const title = document.getElementById('modal-policy-title');
     const content = document.getElementById('modal-policy-content');
     if (type === 'privacy') {
-        title.textContent = 'ChÃ­nh SÃ¡ch Báº£o Máº­t (Privacy Policy)';
+        title.textContent = 'Chính Sách Bảo Mật (Privacy Policy)';
         content.innerHTML = `
-            <p><strong>1. Thu tháº­p thÃ´ng tin:</strong> SUB24H.NET cam káº¿t báº£o máº­t tuyá»t Äá»i dá»¯ liá»u ngÆ°á»i dÃ¹ng. ChÃºng tÃ´i chá» lÆ°u trá»¯ tÃªn tÃ i khoáº£n vÃ  email Äá» há» trá»£ khÃ´i phá»¥c máº­t kháº©u vÃ  thÃ´ng bÃ¡o giao dá»ch.</p>
-            <p><strong>2. Tuyá»t Äá»i khÃ´ng lÆ°u máº­t kháº©u máº¡ng xÃ£ há»i:</strong> Há» thá»ng khÃ´ng bao giá» ÄÃ²i há»i thÃ´ng tin ÄÄng nháº­p tÃ i khoáº£n Facebook, TikTok hay YouTube cá»§a quÃ½ khÃ¡ch.</p>
-            <p><strong>3. MÃ£ hÃ³a an toÃ n:</strong> Má»i dá»¯ liá»u truyá»n táº£i trÃªn há» thá»ng Äá»u ÄÆ°á»£c mÃ£ hÃ³a báº±ng chuáº©n SSL 256-bit cao cáº¥p nháº¥t.</p>
+            <p><strong>1. Thu thập thông tin:</strong> SUB24H.NET cam kết bảo mật tuyệt đối dữ liệu người dùng. Chúng tôi chỉ lưu trữ tên tài khoản và email để hỗ trợ khôi phục mật khẩu và thông báo giao dịch.</p>
+            <p><strong>2. Tuyệt đối không lưu mật khẩu mạng xã hội:</strong> Hệ thống không bao giờ đòi hỏi thông tin đăng nhập tài khoản Facebook, TikTok hay YouTube của quý khách.</p>
+            <p><strong>3. Mã hóa an toàn:</strong> Mọi dữ liệu truyền tải trên hệ thống đều được mã hóa bằng chuẩn SSL 256-bit cao cấp nhất.</p>
         `;
     } else if (type === 'terms') {
-        title.textContent = 'Äiá»u Khoáº£n Dá»ch Vá»¥ (Terms of Service)';
+        title.textContent = 'Điều Khoản Dịch Vụ (Terms of Service)';
         content.innerHTML = `
-            <p><strong>1. Quy Äá»nh sá»­ dá»¥ng:</strong> NgÆ°á»i dÃ¹ng cam káº¿t chá» sá»­ dá»¥ng dá»ch vá»¥ cho cÃ¡c má»¥c ÄÃ­ch há»£p phÃ¡p, khÃ´ng vi pháº¡m phÃ¡p luáº­t hiá»n hÃ nh vÃ  thuáº§n phong má»¹ tá»¥c.</p>
-            <p><strong>2. LiÃªn káº¿t cÃ´ng khai:</strong> Trong suá»t quÃ¡ trÃ¬nh há» thá»ng Äang xá»­ lÃ½ ÄÆ¡n hÃ ng, ngÆ°á»i dÃ¹ng tuyá»t Äá»i khÃ´ng Äá»i tÃªn ngÆ°á»i dÃ¹ng (username), khÃ´ng Äá»i link bÃ i viáº¿t hoáº·c chuyá»n tÃ i khoáº£n vá» cháº¿ Äá» riÃªng tÆ°.</p>
-            <p><strong>3. TrÃ¡ch nhiá»m ngÆ°á»i dÃ¹ng:</strong> Kiá»m tra ká»¹ ÄÆ°á»ng dáº«n bÃ i viáº¿t trÆ°á»c khi báº¥m xÃ¡c nháº­n táº¡o ÄÆ¡n.</p>
+            <p><strong>1. Quy định sử dụng:</strong> Người dùng cam kết chỉ sử dụng dịch vụ cho các mục đích hợp pháp, không vi phạm pháp luật hiện hành và thuần phong mỹ tục.</p>
+            <p><strong>2. Liên kết công khai:</strong> Trong suốt quá trình hệ thống đang xử lý đơn hàng, người dùng tuyệt đối không đổi tên người dùng (username), không đổi link bài viết hoặc chuyển tài khoản về chế độ riêng tư.</p>
+            <p><strong>3. Trách nhiệm người dùng:</strong> Kiểm tra kỹ đường dẫn bài viết trước khi bấm xác nhận tạo đơn.</p>
         `;
     } else if (type === 'refund') {
-        title.textContent = 'ChÃ­nh SÃ¡ch HoÃ n Tiá»n & Báº£o HÃ nh (Refund Policy)';
+        title.textContent = 'Chính Sách Hoàn Tiền & Bảo Hành (Refund Policy)';
         content.innerHTML = `
-            <p><strong>1. HoÃ n tiá»n tá»± Äá»ng:</strong> TrÆ°á»ng há»£p ÄÆ¡n hÃ ng bá» lá»i mÃ¡y chá»§ hoáº·c khÃ´ng thá» hoÃ n thÃ nh trong 24h, há» thá»ng sáº½ tá»± Äá»ng hoÃ n 100% tiá»n vá» tÃ i khoáº£n sá» dÆ° cá»§a báº¡n.</p>
-            <p><strong>2. Báº£o hÃ nh tá»¥t giáº£m:</strong> CÃ¡c gÃ³i cÃ³ kÃ½ hiá»u "Báº£o hÃ nh" sáº½ ÄÆ°á»£c bÃ¹ Äá»§ sá» lÆ°á»£ng tá»¥t giáº£m hoÃ n toÃ n miá»n phÃ­ trong suá»t thá»i háº¡n báº£o hÃ nh.</p>
-            <p><strong>3. TrÆ°á»ng há»£p khÃ´ng há» trá»£ hoÃ n tiá»n:</strong> KhÃ¡ch hÃ ng Äiá»n sai Äá»nh dáº¡ng liÃªn káº¿t, bÃ i viáº¿t bá» xÃ³a hoáº·c vi pháº¡m tiÃªu chuáº©n cá»ng Äá»ng cá»§a ná»n táº£ng.</p>
+            <p><strong>1. Hoàn tiền tự động:</strong> Trường hợp đơn hàng bị lỗi máy chủ hoặc không thể hoàn thành trong 24h, hệ thống sẽ tự động hoàn 100% tiền về tài khoản số dư của bạn.</p>
+            <p><strong>2. Bảo hành tụt giảm:</strong> Các gói có ký hiệu "Bảo hành" sẽ được bù đủ số lượng tụt giảm hoàn toàn miễn phí trong suốt thời hạn bảo hành.</p>
+            <p><strong>3. Trường hợp không hỗ trợ hoàn tiền:</strong> Khách hàng điền sai định dạng liên kết, bài viết bị xóa hoặc vi phạm tiêu chuẩn cộng đồng của nền tảng.</p>
         `;
     } else if (type === 'api') {
-        title.textContent = 'TÃ i Liá»u Káº¿t Ná»i API Cho Äáº¡i LÃ½ (Reseller API)';
+        title.textContent = 'Tài Liệu Kết Nối API Cho Đại Lý (Reseller API)';
         content.innerHTML = `
-            <p><strong>1. Chuáº©n káº¿t ná»i:</strong> SUB24H cung cáº¥p REST API tÆ°Æ¡ng thÃ­ch 100% vá»i cÃ¡c mÃ£ nguá»n SMM Panel phá» biáº¿n (SmartStore, Rental, Perfect Panel...).</p>
-            <p><strong>2. Endpoint chÃ­nh:</strong> <code>https://api.sub24h.net/v2</code></p>
-            <p><strong>3. TÃ­nh nÄng há» trá»£:</strong> ThÃªm ÄÆ¡n hÃ ng (add), Kiá»m tra tráº¡ng thÃ¡i ÄÆ¡n (status), Láº¥y danh sÃ¡ch dá»ch vá»¥ (services), Tra cá»©u sá» dÆ° (balance).</p>
-            <p><strong>4. Má»©c chiáº¿t kháº¥u:</strong> Äáº¡i lÃ½ ÄÆ°á»£c hÆ°á»ng má»©c giÃ¡ giáº£m tá»« 5% Äáº¿n 15% theo tá»ng doanh sá» náº¡p hÃ ng thÃ¡ng.</p>
+            <p><strong>1. Chuẩn kết nối:</strong> SUB24H cung cấp REST API tương thích 100% với các mã nguồn SMM Panel phổ biến (SmartStore, Rental, Perfect Panel...).</p>
+            <p><strong>2. Endpoint chính:</strong> <code>https://api.sub24h.net/v2</code></p>
+            <p><strong>3. Tính năng hỗ trợ:</strong> Thêm đơn hàng (add), Kiểm tra trạng thái đơn (status), Lấy danh sách dịch vụ (services), Tra cứu số dư (balance).</p>
+            <p><strong>4. Mức chiết khấu:</strong> Đại lý được hưởng mức giá giảm từ 5% đến 15% theo tổng doanh số nạp hàng tháng.</p>
         `;
     }
     modalPolicy.classList.remove('hidden');
@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.removeItem('sub24h_user');
             } catch (e) {}
             updateHeaderUserUI();
-            showToast('ÄÃ£ ÄÄng xuáº¥t tÃ i khoáº£n thÃ nh cÃ´ng!');
+            showToast('Đã đăng xuất tài khoản thành công!');
         });
     }
     const chartBtn7d = document.getElementById('chart-btn-7d');
@@ -638,13 +638,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (err) {}
             updateHeaderUserUI();
             closeAuthModal();
-            showToast(`ChÃ o má»«ng ${currentUser.username} ÄÃ£ ÄÄng nháº­p thÃ nh cÃ´ng!`);
+            showToast(`Chào mừng ${currentUser.username} đã đăng nhập thành công!`);
         });
     }
     const btnForgotPass = document.getElementById('btn-forgot-password');
     if (btnForgotPass) {
         btnForgotPass.addEventListener('click', () => {
-            showToast('Vui lÃ²ng liÃªn há» CSKH Telegram @sub24h_cskh Äá» Äáº·t láº¡i máº­t kháº©u!', 'info');
+            showToast('Vui lòng liên hệ CSKH Telegram @sub24h_cskh để đặt lại mật khẩu!', 'info');
         });
     }
     const formOrder = document.getElementById('form-order');
@@ -656,7 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const qty = document.getElementById('modal-order-quantity').value;
             const found = PRICING_DATA.find(p => p.id === sId);
             closeOrderModal();
-            showToast(`Táº¡o ÄÆ¡n thÃ nh cÃ´ng cho ${found ? found.name : 'Dá»ch vá»¥'} (${qty} lÆ°á»£t). Há» thá»ng Äang kÃ­ch hoáº¡t!`);
+            showToast(`Tạo đơn thành công cho ${found ? found.name : 'Dịch vụ'} (${qty} lượt). Hệ thống đang kích hoạt!`);
         });
     }
     const btnAuthClose = document.getElementById('btn-modal-auth-close');
@@ -684,12 +684,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = 'NAP SUB24H 8899';
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text).then(() => {
-                    showToast('ÄÃ£ sao chÃ©p ná»i dung: ' + text);
+                    showToast('Đã sao chép nội dung: ' + text);
                 }).catch(() => {
-                    showToast('Ná»i dung: ' + text);
+                    showToast('Nội dung: ' + text);
                 });
             } else {
-                showToast('Ná»i dung: ' + text);
+                showToast('Nội dung: ' + text);
             }
         });
     }
