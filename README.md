@@ -23,4 +23,4 @@ Thấy hữu ích thì tặng mình một ⭐ trên GitHub là vui rồi 😄
 
 📄 Giấy phép
 
-MIT License, dùng tự do, kể cả thương mại.
+MIT License.
