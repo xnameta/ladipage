@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="XNAMETA — Nhà phát triển sản phẩm số, khám phá công nghệ, AI và tự động hóa." />
+  <title>XNAMETA — Hồ sơ Nhà phát triển &amp; Sản phẩm số</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <canvas id="bg-particles" class="bg-particles" aria-hidden="true"></canvas>
+  <div class="ambient-glow ambient-glow--violet" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow--cyan" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-logo" aria-label="XNAMETA Trang chủ">
+        <span class="brand-logo__mark" aria-hidden="true"></span>
+        <span class="brand-logo__text">xnameta</span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Mở menu điều hướng">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Điều hướng chính">
+        <a href="#about" class="nav-link">Giới thiệu</a>
+        <a href="#explore" class="nav-link">Lĩnh vực</a>
+        <a href="#projects" class="nav-link">Dự án</a>
+        <a href="#stack" class="nav-link">Công nghệ</a>
+        <a href="#github" class="nav-link nav-link--accent">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO PROFILE -->
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="status-badge">
+            <span class="status-badge__dot" aria-hidden="true"></span>
+            <span class="status-badge__text">NHÀ PHÁT TRIỂN SẢN PHẨM SỐ</span>
+          </div>
+
+          <p class="hero-brand-kicker">xnameta</p>
+          <h1 class="hero-title">XNAMETA</h1>
+          <p class="hero-tagline">BIẾN Ý TƯỞNG THÀNH HIỆN THỰC SỐ.</p>
+          <p class="hero-desc">
+            Khám phá công nghệ, xây dựng sản phẩm số và hiện thực hóa những ý tưởng táo bạo.
+          </p>
+
+          <ul class="focus-pills" aria-label="Định hướng phát triển">
+            <li class="focus-pill">Lập trình viên độc lập</li>
+            <li class="focus-pill">Đam mê AI &amp; Tự động hóa</li>
+            <li class="focus-pill">Xây dựng sản phẩm số</li>
+            <li class="focus-pill">Công nghệ Web</li>
+            <li class="focus-pill">Dự án thử nghiệm</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn--primary">
+              <span>Khám phá dự án</span>
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="https://github.com/xnameta" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="avatar-frame">
+            <div class="avatar-frame__ring avatar-frame__ring--outer" aria-hidden="true"></div>
+            <div class="avatar-frame__ring avatar-frame__ring--inner" aria-hidden="true"></div>
+            <img src="assets/images/hero-avatar.jpg" alt="Biểu tượng 3D trừu tượng công nghệ của XNAMETA" class="avatar-frame__img" />
+            <div class="avatar-frame__tag">
+              <span class="mono-label">XNAMETA // CORE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">01 / GIỚI THIỆU</span>
+          <h2 class="section-title section-title--xl">MỘT CHÚT VỀ NHỮNG GÌ TÔI XÂY DỰNG.</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-card glass-card reveal">
+            <p class="about-lead">
+              Tôi thích khám phá công nghệ, thử nghiệm AI và xây dựng những sản phẩm số giải quyết các vấn đề thực tế.
+            </p>
+            <p class="about-text">
+              Sự quan tâm của tôi trải dài từ phát triển web, tự động hóa, ứng dụng tích hợp AI cho đến các trải nghiệm số sáng tạo.
+            </p>
+            <p class="about-text about-text--highlight">
+              Tôi tin rằng một ý tưởng hay chỉ thực sự có ý nghĩa khi được hiện thực hóa thành sản phẩm hoạt động.
+            </p>
+          </div>
+
+          <aside class="about-graphic glass-card reveal" aria-label="Tư duy phát triển">
+            <div class="terminal-bar" aria-hidden="true">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-title">xnameta.system</span>
+            </div>
+            <div class="about-graphic__body">
+              <div class="graphic-node">
+                <span class="mono-label">TRỌNG TÂM</span>
+                <p>Sản phẩm số &amp; Hệ thống tự động</p>
+              </div>
+              <div class="graphic-node">
+                <span class="mono-label">PHƯƠNG CHÂM</span>
+                <p>Thử nghiệm nhanh, tinh gọn và thực tế</p>
+              </div>
+              <div class="graphic-node">
+                <span class="mono-label">TRẠNG THÁI</span>
+                <p class="text-accent">Đang nghiên cứu &amp; xây dựng</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHAT I EXPLORE -->
+    <section class="explore section" id="explore">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">02 / LĨNH VỰC KHÁM PHÁ</span>
+          <h2 class="section-title">NHỮNG MẢNG CÔNG NGHỆ TÔI THEO ĐUỔI.</h2>
+        </div>
+
+        <div class="explore-grid">
+          <article class="explore-card glass-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2a4 4 0 014 4v1a3 3 0 012.5 2.96V12a3 3 0 01-2.5 2.96V16a4 4 0 01-8 0v-1.04A3 3 0 015.5 12V9.96A3 3 0 018 7V6a4 4 0 014-4z" />
+                <path d="M9 10h.01M15 10h.01M9.5 14a3.5 3.5 0 005 0" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="explore-card__title">AI &amp; Machine Learning</h3>
+            <p class="explore-card__desc">
+              Thử nghiệm mô hình ngôn ngữ, xử lý đa phương thức và tích hợp trí tuệ nhân tạo vào ứng dụng thực tế.
+            </p>
+          </article>
+
+          <article class="explore-card glass-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="M3 9h18M9 14l2 2-2 2M13 18h3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="explore-card__title">Phát triển Web</h3>
+            <p class="explore-card__desc">
+              Thiết kế và xây dựng giao diện hiện đại, tối ưu hiệu năng và trải nghiệm người dùng trên nền tảng web.
+            </p>
+          </article>
+
+          <article class="explore-card glass-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="6" cy="6" r="2.5" />
+                <circle cx="18" cy="6" r="2.5" />
+                <circle cx="12" cy="18" r="2.5" />
+                <path d="M8.2 7.4l2.8 8.3M15.8 7.4L13 15.7M8.5 6h7" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="explore-card__title">Tự động hóa &amp; AI Agents</h3>
+            <p class="explore-card__desc">
+              Xây dựng luồng xử lý tự động, bot thông minh và tác nhân AI hỗ trợ tối ưu quy trình làm việc.
+            </p>
+          </article>
+
+          <article class="explore-card glass-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke-linejoin="round" />
+                <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="explore-card__title">Sản phẩm số</h3>
+            <p class="explore-card__desc">
+              Phát triển từ ý tưởng ban đầu thành nền tảng hoàn chỉnh, tập trung vào tính ứng dụng và trải nghiệm tinh gọn.
+            </p>
+          </article>
+
+          <article class="explore-card glass-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="4" y="4" width="16" height="6" rx="1.5" />
+                <rect x="4" y="14" width="16" height="6" rx="1.5" />
+                <path d="M8 7h.01M8 17h.01M12 7h4M12 17h4" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="explore-card__title">Backend &amp; Hạ tầng</h3>
+            <p class="explore-card__desc">
+              Vận hành máy chủ Linux, xây dựng API ổn định và tối ưu kiến trúc hệ thống cho các ứng dụng chạy 24/7.
+            </p>
+          </article>
+
+          <article class="explore-card glass-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3v3M12 18v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M3 12h3M18 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke-linecap="round" />
+                <circle cx="12" cy="12" r="3.5" />
+              </svg>
+            </div>
+            <h3 class="explore-card__title">Công nghệ sáng tạo</h3>
+            <p class="explore-card__desc">
+              Kết hợp lập trình cùng đồ họa, âm thanh và video AI để tạo ra những trải nghiệm tương tác mới mẻ.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SELECTED PROJECTS -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header section-header--split reveal">
+          <div>
+            <span class="section-eyebrow">03 / DỰ ÁN &amp; THỬ NGHIỆM</span>
+            <h2 class="section-title">THỬ NGHIỆM, Ý TƯỞNG &amp; SẢN PHẨM.</h2>
+          </div>
+
+          <div class="filter-tabs" role="tablist" aria-label="Lọc dự án theo trạng thái">
+            <button type="button" class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">Tất cả</button>
+            <button type="button" class="filter-tab" data-filter="building" role="tab" aria-selected="false">Đang xây dựng</button>
+            <button type="button" class="filter-tab" data-filter="exploring" role="tab" aria-selected="false">Đang khám phá</button>
+            <button type="button" class="filter-tab" data-filter="concept" role="tab" aria-selected="false">Ý tưởng</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <article class="project-card glass-card reveal" data-status="building">
+            <div class="project-card__media">
+              <img src="assets/images/project-streams.jpg" alt="Minh họa nền tảng SUB24H" loading="lazy" />
+              <span class="status-pill status-pill--building">Đang xây dựng</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">SUB24H</h3>
+              <p class="project-card__desc">
+                Nền tảng dịch vụ tiếp thị mạng xã hội, tập trung vào giao diện trực quan và tự động hóa quy trình xử lý.
+              </p>
+              <ul class="tech-tags" aria-label="Công nghệ liên quan">
+                <li>Web</li>
+                <li>PHP</li>
+                <li>Python</li>
+                <li>Automation</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-status="exploring">
+            <div class="project-card__media">
+              <img src="assets/images/project-prism.jpg" alt="Minh họa nền tảng LISCam" loading="lazy" />
+              <span class="status-pill status-pill--exploring">Đang khám phá</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">LISCam</h3>
+              <p class="project-card__desc">
+                Nền tảng mạng xã hội thử nghiệm hướng tới trải nghiệm kết nối và chia sẻ nội dung số hiện đại.
+              </p>
+              <ul class="tech-tags" aria-label="Công nghệ liên quan">
+                <li>Web</li>
+                <li>JavaScript</li>
+                <li>Backend API</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-status="building">
+            <div class="project-card__media">
+              <img src="assets/images/project-audio.jpg" alt="Minh họa nền tảng TruyenAudio" loading="lazy" />
+              <span class="status-pill status-pill--building">Đang xây dựng</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">TruyenAudio</h3>
+              <p class="project-card__desc">
+                Nền tảng nghe truyện audio trực tuyến với trải nghiệm phát mượt mà và tổ chức nội dung tối giản.
+              </p>
+              <ul class="tech-tags" aria-label="Công nghệ liên quan">
+                <li>Web</li>
+                <li>Audio Streaming</li>
+                <li>Python</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-status="exploring">
+            <div class="project-card__media">
+              <img src="assets/images/project-prism.jpg" alt="Minh họa AI Video Studio" loading="lazy" />
+              <span class="status-pill status-pill--exploring">Đang khám phá</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">AI Video Studio</h3>
+              <p class="project-card__desc">
+                Không gian thử nghiệm tạo video điện ảnh bằng AI, nghiên cứu kịch bản đa góc quay và xử lý hình ảnh.
+              </p>
+              <ul class="tech-tags" aria-label="Công nghệ liên quan">
+                <li>AI APIs</li>
+                <li>Video Gen</li>
+                <li>Creative Tech</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card glass-card reveal" data-status="concept">
+            <div class="project-card__media">
+              <img src="assets/images/project-streams.jpg" alt="Minh họa AI Automation" loading="lazy" />
+              <span class="status-pill status-pill--concept">Ý tưởng</span>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">AI Automation</h3>
+              <p class="project-card__desc">
+                Hệ thống tự động hóa và quy trình hỗ trợ lập trình viên, kết nối AI Agent với các tác vụ kỹ thuật hằng ngày.
+              </p>
+              <ul class="tech-tags" aria-label="Công nghệ liên quan">
+                <li>Python</li>
+                <li>Codex</li>
+                <li>AI Agents</li>
+                <li>Linux</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: TECH STACK -->
+    <section class="stack section" id="stack">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">04 / CÔNG NGHỆ SỬ DỤNG</span>
+          <h2 class="section-title">NHỮNG CÔNG CỤ TÔI THÍCH DÙNG ĐỂ XÂY DỰNG.</h2>
+          <p class="section-subtitle">
+            Các công nghệ tôi quan tâm và sử dụng trong những dự án thử nghiệm hàng ngày.
+          </p>
+        </div>
+
+        <div class="stack-groups">
+          <div class="stack-group glass-card reveal">
+            <h3 class="stack-group__title">Giao diện (Frontend)</h3>
+            <ul class="stack-items">
+              <li class="stack-item">
+                <span class="stack-item__badge">H5</span>
+                <span>HTML</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">C3</span>
+                <span>CSS</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">JS</span>
+                <span>JavaScript</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="stack-group glass-card reveal">
+            <h3 class="stack-group__title">Hệ thống (Backend)</h3>
+            <ul class="stack-items">
+              <li class="stack-item">
+                <span class="stack-item__badge">PY</span>
+                <span>Python</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">PHP</span>
+                <span>PHP</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">FA</span>
+                <span>FastAPI</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="stack-group glass-card reveal">
+            <h3 class="stack-group__title">Hạ tầng (Infrastructure)</h3>
+            <ul class="stack-items">
+              <li class="stack-item">
+                <span class="stack-item__badge">LX</span>
+                <span>Linux</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">UB</span>
+                <span>Ubuntu</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">VPS</span>
+                <span>VPS</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">NGX</span>
+                <span>Nginx</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">GIT</span>
+                <span>Git</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="stack-group glass-card reveal">
+            <h3 class="stack-group__title">AI &amp; Phát triển</h3>
+            <ul class="stack-items">
+              <li class="stack-item">
+                <span class="stack-item__badge">API</span>
+                <span>AI APIs</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">CDX</span>
+                <span>Codex</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">BOT</span>
+                <span>Automation</span>
+              </li>
+              <li class="stack-item">
+                <span class="stack-item__badge">GH</span>
+                <span>GitHub</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PHILOSOPHY -->
+    <section class="philosophy section" id="philosophy">
+      <div class="container">
+        <div class="philosophy-stage reveal">
+          <div class="philosophy-glow" aria-hidden="true"></div>
+          <div class="philosophy-words" aria-label="Triết lý xây dựng sản phẩm">
+            <span class="philosophy-word">NGHĨ.</span>
+            <span class="philosophy-word">XÂY.</span>
+            <span class="philosophy-word">THỬ NGHIỆM.</span>
+            <span class="philosophy-word philosophy-word--accent">CẢI TIẾN.</span>
+          </div>
+          <p class="philosophy-caption">
+            Ý tưởng có ở khắp mọi nơi.<br />
+            <span>Cách thực thi mới tạo nên sự khác biệt.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: GITHUB PROFILE -->
+    <section class="github-section section" id="github">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">05 / MÃ NGUỒN MỞ</span>
+          <h2 class="section-title">KHÁM PHÁ MÃ NGUỒN CỦA TÔI.</h2>
+          <p class="section-subtitle">
+            Những ý tưởng mã nguồn mở, thử nghiệm kỹ thuật và dự án đang phát triển.
+          </p>
+        </div>
+
+        <div class="github-card glass-card reveal">
+          <div class="github-card__identity">
+            <div class="github-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+            </div>
+            <div>
+              <span class="mono-label">TÀI KHOẢN GITHUB</span>
+              <h3 class="github-card__username">xnameta</h3>
+              <p class="github-card__desc">
+                Khám phá các kho lưu trữ mã nguồn và những thử nghiệm lập trình của tôi.
+              </p>
+            </div>
+          </div>
+
+          <a href="https://github.com/xnameta" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+            <span>Xem hồ sơ GitHub</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 8: FOOTER SIGNATURE -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 XNAMETA.</p>
+      <p class="footer-motto">XÂY DỰNG TƯƠNG LAI, TỪNG Ý TƯỞNG MỘT.</p>
+      <a href="https://github.com/xnameta" class="footer-link" target="_blank" rel="noopener noreferrer">
+        xnameta ↗
+      </a>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Cuộn lên đầu trang">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
